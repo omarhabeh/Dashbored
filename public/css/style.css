@@ -1,0 +1,13 @@
+.user_mang{
+    background-color: whitesmoke;
+    margin:0px auto;
+    padding-top:20px;
+    text-align: center;
+}
+.user_mang img{
+    border-radius: 500px ;
+    border:2px solid black;
+}
+.user_image{
+    border-radius: 50px ;
+  }
