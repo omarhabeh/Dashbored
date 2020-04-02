@@ -16,11 +16,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function(){
     return view('welcome');
 })->name('home');
+
+
+
+Route::get('/project', 'ProjectController@project');
+Route::get('/team', 'TeamController@team');
+Route::get('/task', 'TaskController@task');
+
+
+
 Route::get('/admin', 'HomeController@admin')->name('admin');
 Route::get('/charts', 'HomeController@charts')->name('charts');
+Route::post('/image','HomeController@Image');
+Route::get('/image','HomeController@Image');
 Route::get('/user', function(){
     return view('user');
 })->name('user');
-Route::post('/image','HomeController@Image');
-Route::get('/image','HomeController@Image');
+
 Auth::routes();

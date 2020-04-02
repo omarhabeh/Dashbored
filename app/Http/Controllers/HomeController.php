@@ -21,14 +21,15 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    
     public function admin()
     {
         return view('home');
     }
+
     public function charts(){
         return view('charts');
     }
+    
     public function Image(Request $request){
         $id=$request->input('id');
         $file=$request->file('Image_usr');
