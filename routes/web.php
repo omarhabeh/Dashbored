@@ -23,4 +23,11 @@ Route::get('/user', function(){
 })->name('user');
 Route::post('/image','HomeController@Image');
 Route::get('/image','HomeController@Image');
+Route::get('/UsersRegistarion','HomeController@UsersRegistarion');
+Route::get('/UsersRegistarion/{id}','HomeController@UsersEdit');
+Route::post('/UsersRegistarion','HomeController@store');
+Route::get('/UserDashbored',function(){
+    return view('userview');
+})->name('UserDashbored');
 Auth::routes();
+

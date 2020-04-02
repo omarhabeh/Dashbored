@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('role_auth');
     }
 
     /**
@@ -26,6 +26,15 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    public function UsersRegistarion(){
+      $user=User::all();
+        return view('users_tabe')->with('user',$user);
+    }
+    public function UsersEdit($id){
+
+        $user=User::FindOrFail($id);
+        return view('UserEdit',['user'=>$user]);
+      }
     public function charts(){
         return view('charts');
     }
@@ -39,5 +48,14 @@ class HomeController extends Controller
         $user->Image=$filename;
         $user->save();
         return redirect('user')->with("msg","Your User Photo was changed succesfully");
+    }
+    public function store(Request $request){
+        $id=$request->input('id');
+        $user=User::findOrFail($id);
+        $user->name=$request->input("Name");
+        $user->email=$request->input("Email");
+        $user->role=$request->input("Role");
+        $user->save();
+        return redirect('/UsersRegistarion')->with("msg","User was successfully edited");
     }
 }

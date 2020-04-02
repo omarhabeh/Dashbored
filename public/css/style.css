@@ -11,3 +11,18 @@
 .user_image{
     border-radius: 50px ;
   }
+  label{
+    float: left;
+  }
+.form-group > *{
+    display: block !important;
+    
+}
+.btn{
+    width: 100%;
+}
+.container{
+
+    display: flex;
+    justify-content: center;
+}
